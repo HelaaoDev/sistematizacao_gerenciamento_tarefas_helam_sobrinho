@@ -1,0 +1,343 @@
+/* Reset e base */
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+body {
+  background: #f4f6f9;
+  margin: 0;
+  padding: 24px;
+  color: #1f2937;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+/* Título */
+h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #111827;
+  text-align: center;
+}
+
+/* Formulário nova tarefa */
+.new-task input,
+#task-desc,
+.new-task select,
+.new-task input[type="date"] {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+
+#task-desc {
+  min-height: 70px;
+  resize: vertical;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+
+.controls select,
+.controls input[type="date"],
+.controls input,
+.controls button {
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.filters input,
+.filters select,
+.filters button {
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.controls button {
+  height: 44px;
+  padding: 0 24px;
+  font-size: 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.controls select,
+.controls input[type="date"] {
+  height: 44px;
+  border-radius: 8px;
+  font-size: 1rem;
+  padding: 0 14px;
+  border: 1px solid #e5e7eb;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.controls button {
+  flex: 0 0 auto;
+  padding: 10px 20px;
+  /* Remova margin-left: auto; */
+}
+
+.sub-options-group {
+  display: block;
+  margin: 8px 0 0 0;
+}
+.suboption-edit, .suboption-add {
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid #e5e7eb;
+  font-size: 0.95rem;
+}
+.sub-options-group button.small {
+  background: #f3f4f6;
+  color: #111;
+  border: 1px solid #e5e7eb;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  margin-bottom: 2px;
+}
+
+button {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: #1e40af;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Filtros */
+.filters {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.filters input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.filters select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+/* Lista de tarefas */
+.tasks-list {
+  display: grid;
+  gap: 12px;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.task .meta {
+  max-width: 70%;
+}
+
+.task h3 {
+  margin: 0 0 6px 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.task p {
+  margin: 0;
+  color: #4b5563;
+  font-size: 0.9rem;
+}
+
+/* Badge genérica */
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  margin-top: 8px;
+}
+
+/* Cores por prioridade */
+.badge.baixa {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.badge.media {
+  background: #fef9c3;
+  color: #92400e;
+}
+
+.badge.alta {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.actions button {
+  background: #f9fafb;
+  color: #111;
+  border: 1px solid #e5e7eb;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+}
+
+.actions button:hover {
+  background: #f3f4f6;
+}
+
+.done {
+  opacity: 0.7;
+  text-decoration: line-through;
+}
+
+.custom-radio-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: -12px; /* Reduced from 4px */
+  gap: 4px;           /* Reduced from 8px */
+  cursor: pointer;
+  user-select: none;
+}
+
+.custom-radio {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.checkmark {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background: #edeef2;
+  border-radius: 50%;
+  position: relative;
+  margin-right: 8px;
+  transition: background 0.2s, border 0.2s;
+}
+
+.custom-radio:checked + .checkmark {
+  background: #6366f1;
+  border-color: #6366f1;
+}
+
+.custom-radio:checked + .checkmark:after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 6px;
+  height: 12px;
+  border: solid #fff;
+  border-width: 0 3px 3px 0;
+  border-radius: 1px;
+  transform: rotate(45deg);
+  display: block;
+}
+
+.custom-radio:disabled + .checkmark {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#add-btn {
+  height: 44px;
+  padding: 0 24px;
+  font-size: 1rem;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+#add-btn:hover {
+  background: #1d4ed8;
+}
+
+.task.dragging {
+  opacity: 0.5;
+}
+.task.drag-over {
+  border: 2px dashed #6366f1;
+  background: #f0f4ff;
+}
+
+.drop-zone {
+  height: 10px;
+  background: transparent;
+  transition: background 0.2s;
+}
+
+.active-drop-zone {
+  background: #a5b4fc;
+  border-radius: 4px;
+}

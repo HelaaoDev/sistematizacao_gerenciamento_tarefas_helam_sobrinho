@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Sistema de Gerenciamento de Tarefas - Protótipo</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<main class="container">
+  <h1>Sistema de Gerenciamento de Tarefas</h1>
+  <section class="new-task">
+    <input id="task-title" placeholder="Título da tarefa" />
+    <textarea id="task-desc" placeholder="Descrição (opcional)"></textarea>
+    <div class="controls">
+      <select id="task-priority">
+        <option value="baixa">Baixa</option>
+        <option value="media" selected>Média</option>
+        <option value="alta">Alta</option>
+      </select>
+      <input type="date" id="task-due" />
+      <button id="add-btn">Adicionar</button>
+    </div>
+  </section>
+
+  <section class="filters">
+    <input id="search" placeholder="Pesquisar..." />
+    <select id="filter-status">
+      <option value="all">Todas</option>
+      <option value="active">Ativas</option>
+      <option value="done">Concluídas</option>
+    </select>
+    <button id="clear-btn">Limpar concluídas</button>
+  </section>
+
+  <section id="tasks-list" class="tasks-list" aria-live="polite"></section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
